@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+import ReactMarkdown from "react-markdown";
 
 function App() {
   const [markdown, setMarkdown] = useState("## markdown preview");
@@ -11,7 +11,9 @@ function App() {
           value={markdown}
           onChange={(e) => setMarkdown(e.target.value)}
         ></textarea>
-        <article className="result">{markdown}</article>
+        <article className="result">
+          <ReactMarkdown>{markdown}</ReactMarkdown>
+        </article>
       </section>
     </main>
   );
